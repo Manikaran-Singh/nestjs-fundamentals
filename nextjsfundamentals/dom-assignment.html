@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Greeting & Color Boxes</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .boxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .box {
+            padding: 25px;
+            border-radius: 8px;
+            background: #e0e0e0;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        input {
+            padding: 10px;
+            width: 70%;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <h1 id="greeting">Hello</h1>
+
+    <div class="container">
+
+        <!-- INPUT & BUTTON -->
+        <input type="text" id="username" placeholder="Enter your name">
+        <br>
+        <button onclick="greetUser()">Greet Me</button>
+
+        <!-- COLOR BOXES -->
+        <div class="boxes">
+            <div class="box" onclick="changeColor(this)">Red</div>
+            <div class="box" onclick="changeColor(this)">Blue</div>
+            <div class="box" onclick="changeColor(this)">Green</div>
+            <div class="box" onclick="changeColor(this)">Yellow</div>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Change greeting text
+        function greetUser() {
+            const name = document.getElementById("username").value;
+            if (name.trim() !== "") {
+                document.getElementById("greeting").innerText = "Hello, " + name;
+            } else {
+                alert("Please enter your name");
+            }
+        }
+
+        // Change box background color
+        function changeColor(element) {
+            const color = element.innerText.toLowerCase();
+            element.style.backgroundColor = color;
+            element.style.color = "white";
+        }
+    </script>
+
+</body>
+</html>
