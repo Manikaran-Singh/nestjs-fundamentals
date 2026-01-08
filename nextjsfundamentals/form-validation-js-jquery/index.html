@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation App</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Registration Form</h2>
+
+        <!-- Message Box -->
+        <div id="message"></div>
+
+        <form id="registerForm">
+
+            <input type="text" id="name" placeholder="Full Name" required>
+
+            <input type="email" id="email" placeholder="Email Address" required>
+
+            <input type="text" id="phone" placeholder="Phone Number" required>
+
+            <div class="password-box">
+                <input type="password" id="password" placeholder="Password" required>
+                <span id="togglePassword">Show</span>
+            </div>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
